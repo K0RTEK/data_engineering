@@ -13,7 +13,7 @@ def get_purchase_log_dict(file_path: str) -> Dict[str, str]:
     return purchases
 
 if __name__ == "__main__":
-    purchases = get_purchase_log_dict("purchase_log.txt")
+    purchases = get_purchase_log_dict("dz_1/dz_files/purchase_log.txt")
 
     for counter, (user_id, category) in zip(range(3), purchases.items()):
         if counter == 2:

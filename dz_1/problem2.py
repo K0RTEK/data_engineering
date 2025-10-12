@@ -15,7 +15,7 @@ def get_purchase_log_dict(file_path: str) -> Dict[str, str]:
     return purchases
 
 
-def join_purchases_with_visits(visits_file_path: str, purchases: Dict[str, str], dir_to_save: str = "/Users/kirill/Documents/dermo/") -> None:
+def join_purchases_with_visits(visits_file_path: str, purchases: Dict[str, str], dir_to_save: str = "/Users/kirill/Documents/data_engineering/dz_1/result_files/") -> None:
     if "funnel.csv" in os.listdir(dir_to_save):
             os.remove(f"{dir_to_save}funnel.csv")
 
@@ -33,10 +33,10 @@ def join_purchases_with_visits(visits_file_path: str, purchases: Dict[str, str],
 
 
 if __name__ == "__main__":
-    purchases = get_purchase_log_dict("purchase_log.txt")
-    join_purchases_with_visits('Visit Log.csv', purchases)
+    purchases = get_purchase_log_dict("dz_1/dz_files/purchase_log.txt")
+    join_purchases_with_visits('dz_1/dz_files/Visit Log.csv', purchases)
 
-    with open("funnel.csv", newline='') as csvfile:
+    with open("dz_1/result_files/funnel.csv", newline='') as csvfile:
         csv_file = csv.reader(csvfile, delimiter=',', quotechar='|')
 
         for row_counter, line in zip(range(4), csv_file):
