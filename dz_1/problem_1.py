@@ -1,5 +1,4 @@
 import ast
-
 from typing import Dict, List
 
 def get_purchase_log_dict(file_path: str) -> Dict[str, str]:
